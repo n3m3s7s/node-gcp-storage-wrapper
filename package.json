@@ -1,0 +1,16 @@
+{
+  "name": "node-gcp-wrapper",
+  "version": "1.0.0",
+  "description": "Simple wrapper for copying file to GCP buckets",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test-upload": "node index.js action upload bucket kronoshop-bicdp-pro-custom input ./test.txt output anagrafica_prodotti/test_upload.txt"
+  },
+  "keywords": [],
+  "author": "Fabio Politi",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^6.8.0"
+  }
+}
