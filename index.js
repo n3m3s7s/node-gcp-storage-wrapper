@@ -36,6 +36,7 @@ switch (params.action) {
 
   case "upload":
     action = "upload";
+    break;
 
   case "download":
     action = "download";
@@ -164,8 +165,8 @@ async function upload() {
   let filePath = params.input;
   const bucketName = params.bucket;
   const destFileName = params.output;
-  const generationMatchPrecondition = 0;
   let message = null;
+  //console.log({bucketName, filePath, destFileName});
 
   async function uploadFile() {
     const options = {
