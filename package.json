@@ -11,6 +11,6 @@
   "author": "Fabio Politi",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/storage": "^8.4.0"
+    "@google-cloud/storage": "^7.22.0"
   }
 }
