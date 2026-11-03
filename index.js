@@ -1,5 +1,9 @@
 import path from "path";
 import fs from "fs";
+import { EventEmitter } from "events";
+
+// Alza il limite per nascondere il warning interno di GCP
+EventEmitter.defaultMaxListeners = 20;
 
 function getArg(key, defaultValue) {
   var index = process.argv.indexOf(key);
@@ -56,9 +60,10 @@ if (null === action) {
 import { Storage } from "@google-cloud/storage";
 
 // Creates a client
-const storage = new Storage({
-  keyFilename: params.keyFilename,
-});
+process.env.GOOGLE_APPLICATION_CREDENTIALS = params.keyFilename;
+
+// Inizializza il client vuoto (leggerà l'ambiente in automatico senza generare warning)
+const storage = new Storage();
 
 if ("list" === action) {
   list();
